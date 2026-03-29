@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PL Research with AI | Panagiotis Legeros</title>
+    <meta
+      name="description"
+      content="Meta page connecting three Programming Language research projects built with AI: AspectScript, ESAJS, and Continuations Go."
+    />
+    <style>
+      :root {
+        --bg-1: #f8f7f4;
+        --bg-2: #ece7de;
+        --ink: #1e2a33;
+        --muted: #566474;
+        --line: #d9d3c8;
+        --card: rgba(255, 255, 255, 0.78);
+        --accent-a: #a6472c;
+        --accent-b: #126782;
+        --accent-c: #2c7a4b;
+        --radius: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 10% 10%, #ffdcbf 0, transparent 30%),
+          radial-gradient(circle at 90% 20%, #c4ecff 0, transparent 35%),
+          linear-gradient(160deg, var(--bg-1), var(--bg-2));
+        line-height: 1.6;
+      }
+
+      .wrap {
+        width: min(960px, 92vw);
+        margin: 0 auto;
+        padding: 3.5rem 0 4rem;
+      }
+
+      .hero {
+        margin-bottom: 2.2rem;
+        animation: fadeUp 0.75s ease both;
+      }
+
+      .label {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      h1 {
+        margin: 0.4rem 0 0.9rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.15;
+      }
+
+      .intro {
+        margin: 0;
+        max-width: 68ch;
+        color: var(--muted);
+        font-size: clamp(1rem, 2vw, 1.15rem);
+      }
+
+      .grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .card {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.2rem 1.2rem 1.3rem;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 8px 26px rgba(30, 42, 51, 0.08);
+        transform: translateY(10px);
+        opacity: 0;
+        animation: fadeUp 0.7s ease forwards;
+      }
+
+      .card:nth-child(2) {
+        animation-delay: 0.12s;
+      }
+
+      .card:nth-child(3) {
+        animation-delay: 0.24s;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 4px;
+        border-radius: var(--radius) var(--radius) 0 0;
+      }
+
+      .card.aspect::before {
+        background: linear-gradient(90deg, var(--accent-a), #dc8358);
+      }
+
+      .card.esa::before {
+        background: linear-gradient(90deg, var(--accent-b), #4ea8c5);
+      }
+
+      .card.go::before {
+        background: linear-gradient(90deg, var(--accent-c), #59b87f);
+      }
+
+      .project-title {
+        margin: 0 0 0.35rem;
+        font-size: 1.35rem;
+      }
+
+      .project-text {
+        margin: 0 0 0.75rem;
+        color: var(--muted);
+      }
+
+      .project-link {
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 1px solid currentColor;
+      }
+
+      .project-link:hover,
+      .project-link:focus-visible {
+        color: #000;
+      }
+
+      footer {
+        margin-top: 2.2rem;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @keyframes fadeUp {
+        from {
+          transform: translateY(10px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 650px) {
+        .wrap {
+          padding-top: 2.2rem;
+        }
+
+        .card {
+          padding: 1rem 1rem 1.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="hero">
+        <p class="label">Meta Research Page</p>
+        <h1>Programming Language Research with Artificial Intelligence</h1>
+        <p class="intro">
+          This page presents three complementary projects where I explored
+          Programming Language research with AI support: from language design and
+          tooling ideas to practical implementations and educational resources.
+        </p>
+      </header>
+
+      <section class="grid" aria-label="Research Projects">
+        <article class="card aspect">
+          <h2 class="project-title">AspectScript</h2>
+          <p class="project-text">
+            A research-oriented JavaScript extension for aspect-oriented
+            programming, focused on expressive pointcuts, advice composition, and
+            advanced control over cross-cutting concerns.
+          </p>
+          <a class="project-link" href="https://pleger.github.io/aspectscript"
+            >Visit project</a
+          >
+        </article>
+
+        <article class="card esa">
+          <h2 class="project-title">ESAJS</h2>
+          <p class="project-text">
+            A practical evolution of the AspectScript direction, emphasizing a
+            cleaner and usable implementation path for experimenting with
+            aspect-based techniques in modern JavaScript environments.
+          </p>
+          <a class="project-link" href="https://pleger.github.io/esajs"
+            >Visit project</a
+          >
+        </article>
+
+        <article class="card go">
+          <h2 class="project-title">Continuations in Go</h2>
+          <p class="project-text">
+            A continuation-focused exploration in Go that investigates control
+            flow abstractions and runtime behavior, helping bridge theory and
+            engineering practice in PL concepts.
+          </p>
+          <a class="project-link" href="https://pleger.github.io/Continuations_Go"
+            >Visit project</a
+          >
+        </article>
+      </section>
+
+      <footer>
+        Maintained by Panagiotis Legeros. Published with GitHub Pages.
+      </footer>
+    </main>
+  </body>
+</html>
